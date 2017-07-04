@@ -1,1 +1,24 @@
 # Apache ActiveMQ
+En este repositorio se encontrarán los experimentos realizados con Apache ActiveMQ 5.8.0 http://activemq.apache.org/activemq-580-release.html. La configuración realizada es un cluster "network of workers" que funciona como un balanceador de cargas de mensajes, en los que los clientes son productores y consumidores. 
+A continuación se darán unos pasos para ejecutar la prueba de productor/consumidor.
+
+# Instrucciones
+1. Una vez se haya clonado el repositorio, se debe ir al siguiente directorio b3\apache-activemq-5.8.0\cluster\broker-3\bin y escribir el comando ./broker-3 console para que se conecten los brokers. Luego, escribir el comando en broker-2 y broker-1 en el orden respectivo seguidos de "console". El broker-1 tendrá dos conexiones broker-2 y broker-3, de los cuales el primero será la fuente de los mensajes y los demás los destinos.
+
+2. Cada consola se debe iniciar en consolas diferentes.
+
+3. En caso de querer cambiar las direcciones a las que se conectará cada broker o la topología definida de colas a tópicos, en el archivo de configuracion se podrán incluir los cambios para luego, ponerlos dentro del archivo activemq.xml del broker-1 ubicado en la carpeta conf.
+
+4. Luego, en consolas diferentes iniciamos un productor y tantos consumidores se desee. Vamos al siguiente directorio b1\apache-activemq-5.8.0\example para ejecutar la aplicación y conectar el productor, para los consumidores vamos a  b2\apache-activemq-5.8.0\example y  b3\apache-activemq-5.8.0\example. Se conectan primero los consumidores para que esperen recibir mensaje, se escribe el siguiente comando 
+
+        ant consumer -Durl=tcp://localhost:61626 -Dtopic=false -Dsubject=moo.bar -DclientId=C1 -Ddurable=true
+    
+y para el productor 
+
+        ant producer -Durl=tcp://localhost:61616 -Dtopic=false -Dsubject=moo.bar -Dmax=10 -Ddurable=true
+
+5. La dirección tcp://localhost:puerto incluye el puerto con el que se conectan los brokers y a ellos productores y consumidores.
+
+6. Las direcciones y el tipo de conexión se pueden configurar de acuerdo a como se desee al igual que el nombre de la cola (-Dsubject), el número de mensajes (-Dmax) y mantener los mensajes en la cola (-Ddurable).
+
+
