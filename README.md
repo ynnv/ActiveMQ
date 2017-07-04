@@ -3,7 +3,7 @@ En este repositorio se encontrarán los experimentos realizados con Apache Activ
 A continuación se darán unos pasos para ejecutar la prueba de productor/consumidor.
 
 # Instrucciones
-1. Una vez se haya clonado el repositorio, descargar Activemq 5.8.0 copiar la carpeta en cada broker. Configurar la carpeta apache-activemq-5.8.0 copiando en su interior bin, conf, cluster y example. Si el directorio ya contiene el archivo example no copiarlo. 
+1. Una vez se haya clonado el repositorio, descargar Activemq 5.8.0 copiar la carpeta en cada broker. Configurar la carpeta apache-activemq-5.8.0 copiando en su interior bin, conf, cluster y example. Si el directorio ya contiene el directorio example no copiarlo. 
 
 2. Ir al siguiente directorio b3\apache-activemq-5.8.0\cluster\broker-3\bin y escribir el comando ./broker-3 console para que se conecten los brokers. Luego, escribir el comando en broker-2 y broker-1 en el orden respectivo seguidos de "console". El broker-1 tendrá dos conexiones broker-2 y broker-3, de los cuales el primero será la fuente de los mensajes y los demás los destinos.
 
