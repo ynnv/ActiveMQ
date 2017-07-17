@@ -21,6 +21,6 @@ A continuación se darán unos pasos para ejecutar la prueba de productor/consum
 
 7. La dirección tcp://localhost:puerto incluye el puerto con el que se conectan los brokers y a ellos productores y consumidores.
 
-8. Las direcciones y el tipo de conexión se pueden configurar de acuerdo a como se desee al igual que el nombre de la cola (-Dsubject), el número de mensajes (-Dmax) y mantener los mensajes en la cola (-Ddurable).
+8. Las direcciones y el tipo de conexión se pueden configurar de acuerdo a como se desee al igual que el nombre de la cola (-Dsubject), el número de mensajes (-Dmax), mantener los mensajes en la cola (-Ddurable) y el nombre del consumidor (-DclientId).
 
 
