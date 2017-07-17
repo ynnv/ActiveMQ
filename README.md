@@ -5,9 +5,9 @@ A continuación se darán unos pasos para ejecutar la prueba de productor/consum
 # Instrucciones
 1. Una vez se haya clonado el repositorio, descargar Activemq 5.8.0 copiar la carpeta en cada broker. Configurar la carpeta apache-activemq-5.8.0 copiando en su interior bin, conf, cluster y example. Si el directorio ya contiene el directorio example no copiarlo. 
 
-2. Ir al siguiente directorio b3\apache-activemq-5.8.0\cluster\broker-3\bin y escribir el comando ./broker-3 console para que se conecten los brokers. Luego, escribir el comando en broker-2 y broker-1 en el orden respectivo seguidos de "console". El broker-1 tendrá dos conexiones broker-2 y broker-3, de los cuales el primero será la fuente de los mensajes y los demás los destinos.
+2. Ir al siguiente directorio /b3/apache-activemq-5.8.0/cluster/broker-3/bin y escribir el comando ./broker-3 console para iniciar la conexión de los brokers. Luego, escribir el comando en broker-2 y broker-1 en el orden respectivo seguidos de "console". El broker-1 tendrá dos conexiones broker-2 y broker-3, de los cuales el primero (broker-1) será la fuente de los mensajes y los demás los destinos.
 
-3. Cada consola se debe iniciar en consolas diferentes.
+3. Cada broker se debe iniciar en consolas diferentes. Si no se conectan, se debe ir a la configuración de cada broker, es decir, en el caso de broker-3 ir a /b3/apache-activemq-5.8.0/cluster/broker-3/bin y editar el archivo que tiene el mismo nombre y la siguiente línea "export ACTIVEMQ_HOME=/home/ubuntu/apache-activemq-5.8.0" modificarla por la carpeta donde se clonó o descargó la carpeta. 
 
 4. En caso de querer cambiar las direcciones a las que se conectará cada broker o la topología definida de colas a tópicos, en el archivo de configuracion se podrán incluir los cambios para luego, ponerlos dentro del archivo activemq.xml del broker-1 ubicado en la carpeta conf.
 
