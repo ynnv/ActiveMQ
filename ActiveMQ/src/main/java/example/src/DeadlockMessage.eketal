@@ -1,0 +1,36 @@
+package example.src;
+
+import javax.jms.Session;
+import javax.jms.MessageProducer;
+import javax.jms.MessageConsumer;
+import javax.jms.Connection;
+import javax.jms.TextMessage;
+import javax.jms.Message;
+
+eventclass DeadlockMessage{
+	/*
+	 * This automaton recognize the following event sequence:
+	 * (eventoHello (eventoWorld eventoHello)* eventoHello) 
+	 */	
+	automaton constructor(){
+		start initState : ( eventQueueDeleter -> finalState )||(eventPurge -> finalState);
+		end finalState;
+	}
+	
+	/* 
+	 * Means that accept only the local calls
+	 */ 
+	group localGroup{
+		localhost
+	}
+	
+	event eventQueueDeleter(): call(* example.src.ProducerTool.queueDeleter()) && host(localGroup);
+	event eventPurge(): call(* example.src.ProducerTool.purgeMessages(String)) && host(localGroup);
+		
+	reaction after constructor.initState{
+		String msg = "Reaction detected. Purge messages and delete queue";
+		System.out.println("----------------------------------------");
+		System.out.println(msg);
+		System.out.println("----------------------------------------");
+	}
+}

@@ -1,0 +1,5 @@
+[31/07/17 02:30:50:050 COT] DEBUG jgroups.JGroupsAbstractFacade: ** view: [linux77-6826|0] (1) [linux77-6826]
+[31/07/17 02:30:52:052 COT] DEBUG aspects.DeadlockMessage: [Aspectj] Before: Returned or threw an Exception
+[31/07/17 02:30:52:052 COT] DEBUG aspects.DeadlockMessage: [Aspectj] After: Returned or threw an Exception
+[31/07/17 02:30:52:052 COT] DEBUG aspects.DeadlockMessage: [Aspectj] Before: Event not recognized by the automaton
+[31/07/17 02:30:52:052 COT] DEBUG aspects.DeadlockMessage: [Aspectj] After: Returned or threw an Exception
