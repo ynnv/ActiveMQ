@@ -1,5 +1,5 @@
 # Apache ActiveMQ
-En esta rama se encuentra el experimento de alta frecuencia con Eketal.
+En esta rama se encuentra el issue de ActiveMQ con Eketal.
 
 # Instrucciones
 
